@@ -1,0 +1,346 @@
+.view-product-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left-section {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.main-image-container {
+    position: relative;
+    left: 50px;
+}
+
+.main-image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-icon {
+    position: absolute;
+    left: 294px;
+    top: 1px;
+    z-index: 2;
+}
+
+.wish-icon {
+    font-size: 30px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.25);
+    padding: 4px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    left: 286px;
+    top: 10px;
+}
+
+.wish-icon.filled {
+    color: red;
+}
+
+.sparkles-animation {
+    position: absolute;
+    left: 286px;
+    top: 10px;
+
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    animation: pop-dot 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes pop-dot {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.8) translateY(-15px);
+        opacity: 0;
+    }
+}
+
+.dot-0 {
+    top: -10px;
+    left: 0px;
+}
+
+.dot-1 {
+    top: 0px;
+    left: 20px;
+}
+
+.dot-2 {
+    top: 20px;
+    left: 0px;
+}
+
+.dot-3 {
+    top: 0px;
+    left: -20px;
+}
+
+.dot-4 {
+    top: -10px;
+    left: -10px;
+}
+
+.dot-5 {
+    top: 20px;
+    left: 20px;
+}
+
+
+.thumbnail-row {
+    display: grid;
+    gap: 10px;
+    margin-top: -30%;
+    margin-left: 25px
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    cursor: pointer;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.thumbnail.active {
+    border: 2px solid #000;
+    opacity: 1;
+}
+
+.right-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.product-title {
+    font-size: 28px;
+    margin: 0;
+    color: #333;
+}
+
+.deposit {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.rent-section,
+.buy-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.rent-section input {
+    width: 82px;
+    height: 17px;
+    border-radius: 5px;
+}
+
+.rent-section select {
+    width: 103px;
+    height: 21px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+}
+
+.rentaldetails {
+    display: flex;
+    gap: 10px;
+}
+
+.total-rent {
+    font-weight: bold;
+    color: green;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+
+}
+
+.button-group button {
+    border-radius: 6px;
+    width: 150px;
+    background: #156b7c;
+    color: white;
+    height: 35px;
+}
+
+
+
+.button-group button:hover {
+    background-color: #065A6B;
+}
+
+
+.viewcart {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+.rent-nows {
+    background-color: #156b7c;
+    color: white;
+    border-radius: 5px;
+}
+
+.rent-nows:hover {
+    background-color: #065A6B;
+
+}
+
+
+.description-section {
+    margin-top: -16px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    top: 30px;
+
+
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: #ff5f5f;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+    .view-product-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .left-section, .right-section {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .main-image-container {
+      left: 0;
+    }
+  
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+    }
+  .thumbnail-row{
+   margin-left: -10px;
+  }
+    .rent-section .rentaldetails {
+      flex-direction: flex;
+      align-items: flex-start;
+      margin-left: 70px;
+    }
+  
+    .viewcart {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .wishlist-icon,
+    .sparkles-animation {
+      top: 8px;
+      right: 8px;
+      left: auto;
+    }
+  
+    .wish-icon {
+      left: auto;
+      top: 0;
+    }
+  }
+  .button-group{
+    margin-left: 103px;
+  }
+  @media (max-width: 480px) {
+    .product-title {
+      font-size: 1.3rem;
+    }
+  
+    .deposit, .total-rent, .buy-section h3 {
+      font-size: 1rem;
+    }
+  
+    .description-section {
+      font-size: 0.95rem;
+    }
+  }
+  

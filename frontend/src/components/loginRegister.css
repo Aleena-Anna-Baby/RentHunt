@@ -1,0 +1,216 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    background: linear-gradient(to right,
+
+            #0b0029 20%,
+            #030532 77%,
+            #0b0029 91%);
+}
+
+.form-container {
+    width: 90%;
+    height: 90%;
+    max-width: 1000px;
+    display: flex;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.animation-section {
+    flex: 1;
+    background: #e0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.lottie-player {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-section {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.form-section button {
+    padding: 12px;
+    background-color: #4e8cff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-section button:hover {
+    background-color: #3a6edc;
+}
+
+.form-section p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.form-section span {
+    color: #4e8cff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container.register-mode .form-container {
+    flex-direction: row-reverse;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.regpassicon {
+    position: absolute;
+    right: 52%;
+    top: 59%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.passicon {
+    position: absolute;
+    right: 59px;
+    top: 48%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+    margin-top: 5px;
+    text-align: right;
+}
+
+
+.logout-btn {
+    width: 70px;
+    height: 20px;
+    margin-left: 380px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+ 
+    .animation-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .form-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-section {
+        width: 90%;
+        max-width: 350px;
+        padding: 2rem;
+        backdrop-filter: blur(1px);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section form input,
+    .form-section form button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    .form-section h2 {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .form-section p {
+        color: rgb(114, 234, 218);
+    }
+
+    .form-section span {
+        color: #fcfcfc;
+    }
+
+    .regpassicon {
+        left: 80%;
+        top: 62%
+    }
+
+    .passicon {
+        top: 47%;
+    }
+}

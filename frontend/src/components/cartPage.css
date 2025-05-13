@@ -1,0 +1,282 @@
+.cart-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cart-item {
+  background: #ecf0f3;
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px #d1d9e6,
+    -8px -8px 16px #ffffff;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  width: 880px;
+  height: 250px;
+}
+
+.cart-item:hover {
+  transform: translateY(-4px);
+}
+
+.remove-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #c0392b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.remove-icon:hover {
+  color: #e74c3c;
+}
+
+.cart-images {
+  height: 250px;
+  width: 180px;
+  margin-top: -6px;
+}
+
+.cart-images img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-imager {
+  max-width: 120px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  box-shadow: 4px 4px 8px #d1d9e6,
+    -4px -4px 8px #ffffff;
+}
+
+.hover-image {
+  display: none;
+}
+
+.cart-item:hover .hover-image {
+  display: inline;
+}
+
+.item-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 1rem;
+  margin-left: 6%;
+
+}
+
+.item-details h3 {
+  color: #34495e;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: -4px;
+}
+
+.rentline {
+  display: flex;
+}
+
+.seucrdepo {
+  margin-left: 10px;
+}
+
+.seucrdepo p {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.item-details label {
+  font-weight: bold;
+  margin-right: 1rem;
+  margin-top: 0.6rem;
+}
+
+.item-details select,
+.item-details input {
+  padding: 0.4rem 0.6rem;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  margin-left: 0px;
+  margin-left: -12px;
+}
+
+
+.item-details input[type="number"] {
+  width: 30px;
+}
+
+.buy-now-btn {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.6rem;
+  transition: background 0.3s ease;
+  margin-left: 200px;
+}
+
+.buy-now-btn:hover {
+  background: #1b7cb8;
+}
+
+.action-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+}
+
+
+
+.rent-now-btn {
+  background-color: #3498db;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 154px;
+  height: 47px;
+  margin-top: 10px;
+}
+
+.rent-now-btn:hover {
+  background-color: #15b2af;
+
+}
+
+.buy-now-btn {
+  background-color: #069794;
+  color: white;
+  margin-right: 100px;
+  width: 150px;
+  height: 50px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .cart-item {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .cart-images {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cart-images img {
+    max-width: 180px;
+    height: auto;
+    object-fit: cover;
+    margin: auto;
+  }
+
+  .item-details {
+    margin-left: 0;
+    padding: 1rem 0 0 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rentline {
+    flex-direction: flex;
+    margin-left: 20px;
+    align-items: center;
+  }
+
+  .item-details label {
+    margin-right: 25px;
+    margin-top: 0px;
+  }
+
+  .item-details input[type="number"] {
+    width: 20px;
+  }
+
+  .item-details select {
+    margin-top: 1px;
+  }
+
+  .seucrdepo p {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .buy-now-btn {
+    margin-left: 0;
+  }
+
+  .action-buttons {
+    justify-content: center;
+    flex-direction: flex;
+    align-items: center;
+    margin-left: 25%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-page {
+    padding: 1rem;
+  }
+
+  .cart-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .cart-item {
+    padding: 1rem;
+  }
+
+  .item-details h3 {
+    font-size: 1.1rem;
+  }
+
+  .buy-now-btn,
+  .rent-now-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+
+}

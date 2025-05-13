@@ -1,0 +1,316 @@
+.product-page {
+  background: linear-gradient(to right,
+      #156b7c 20%,
+      #065A6B 77%,
+      #065A6B 91%);
+
+}
+
+.product-page h1 {
+  text-align: center;
+  color: #fbf5f5;
+  margin-top: 23px;
+  font-size: 46px;
+}
+
+.products {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  align-content: center;
+  justify-items: end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-cards {
+  width: 322px;
+  height: 400px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-cards:hover {
+  transform: translateY(-15px);
+  border: 3px solid gold;
+}
+
+
+.product-cards h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.product-cards p {
+  font-size: 14px;
+  color: black;
+}
+
+.product-image-container {
+  position: relative;
+  width: 110%;
+  height: 210px;
+}
+
+.product-images {
+  width: 100%;
+  height: 100%;
+  margin-left: -30px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin-top: 1px;
+}
+
+.product-images img {
+  width: 100%;
+}
+
+.product-images-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.product-image-container:hover .product-images {
+  opacity: 0;
+}
+
+.product-image-container:hover .product-images-hover {
+  opacity: 1;
+  margin-top: 1px;
+  margin-left: -15px;
+  transform: scale(1);
+}
+
+.product-cards h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 27px;
+  margin-top: 24px;
+}
+
+.banner-container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 95%;
+  height: 100%;
+  margin-top: 3px;
+  margin-left: 3%;
+  object-fit: fill;
+}
+
+.cardbutton {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.cardbttns {
+  position: relative;
+  padding: 4px 16px;
+  background: transparent;
+  color: #065A6B;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid #156b7c;
+}
+
+.cardbttns:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background-color: #156b7c;
+  color: white;
+}
+
+.cardbttns::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.cardbttns:hover::before {
+  left: 125%;
+}
+
+.cardicon {
+  transition: color 0.3s ease;
+  font-size: 22px;
+}
+
+.cardbttns:hover .cardicon {
+  color: #f0eff7;
+}
+
+.cardbttns:hover {
+  border: 1px solid #fff;
+}
+
+
+.wishlist-wrapper {
+  position: absolute;
+  left: 294px;
+  top: 1px;
+  z-index: 2;
+}
+
+.wishicon {
+  font-size: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.25);
+  padding: 4px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.wishicon.filled {
+  color: red;
+}
+
+.sparkle-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  animation: pop-dot 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes pop-dot {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.8) translateY(-15px);
+    opacity: 0;
+  }
+}
+
+.dot-0 {
+  top: -10px;
+  left: 0px;
+}
+
+.dot-1 {
+  top: 0px;
+  left: 20px;
+}
+
+.dot-2 {
+  top: 20px;
+  left: 0px;
+}
+
+.dot-3 {
+  top: 0px;
+  left: -20px;
+}
+
+.dot-4 {
+  top: -10px;
+  left: -10px;
+}
+
+.dot-5 {
+  top: 20px;
+  left: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+  .product-page {
+    padding: 20px;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+
+
+  .product-cards {
+    width: 40%;
+    margin-left: 0px;
+    height: 500px;
+
+  }
+
+  .product-card h2 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
+
+
+  .wishicon {
+    font-size: 20px;
+    left: -135px;
+  }
+
+  .sparkle-animation {
+    left: -130px;
+
+  }
+
+  .cardbttns {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0px;
+    gap: 0px;
+  }
+
+
+
+  .cardicon {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+}

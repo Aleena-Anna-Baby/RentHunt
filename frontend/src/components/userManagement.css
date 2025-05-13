@@ -1,0 +1,68 @@
+.user-management-page {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .user-management-page h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: -1rem;
+    font-size: 3rem;
+    color: #fff9f9;
+  }
+  
+  .search-box {
+    width: 73%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .user-table th {
+    background-color: none;
+    font-weight: bold;
+  }
+  
+  .ban-btn,
+  .unban-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .ban-btn {
+    background-color: #e74c3c;
+  }
+  
+  .ban-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .unban-btn {
+    background-color: #27ae60;
+  }
+  
+  .unban-btn:hover {
+    background-color: #1e8449;
+  }
+  
