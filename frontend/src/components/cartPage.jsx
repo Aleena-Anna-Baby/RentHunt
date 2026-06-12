@@ -4,6 +4,7 @@ import './cartPage.css';
 import { FaTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Player } from "@lottiefiles/react-lottie-player";
+import Navbar from "./navbar";
 
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -104,7 +105,10 @@ const CartPage = () => {
     };
 
     return (
+        <div>
+            <Navbar/>
         <div className="cart-page">
+            
             <h1>Your Cart</h1>
             <div className="cart-items">
                 {cartItems.length === 0 ? (
@@ -194,6 +198,7 @@ const CartPage = () => {
                     ))
                 )}
             </div>
+        </div>
         </div>
     );
 };
