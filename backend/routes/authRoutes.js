@@ -49,11 +49,12 @@ router.post("/register", async (req, res) => {
       subject: "OTP Verification for RentHunt",
       html: `<h2>Your OTP is: ${otp}</h2><p>Valid for 10 minutes</p>`,
     });
-
+console.log("OTP sent successfully to:", email);
     res.status(201).json({ message: "OTP sent to email", email });
   } catch (err) {
+     console.error("REGISTER ERROR:");
     console.error(err);
-    res.status(500).json({ message: "Registration failed" });
+    res.status(500).json({ message: "Registration failed",error: err.message, });
   }
 });
 
