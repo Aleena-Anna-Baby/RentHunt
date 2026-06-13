@@ -1,6 +1,6 @@
 const express = require("express");
 const User =require ("../models/User");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config(); 
@@ -8,21 +8,21 @@ require("dotenv").config();
 
 const router = express.Router();
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "aleena2001baby@gmail.com", 
-    pass: "pxawocyihtsfilir",  
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "aleena2001baby@gmail.com", 
+//     pass: "pxawocyihtsfilir",  
+//   },
+// });
 
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log("SMTP ERROR:", error);
-  } else {
-    console.log("SMTP SERVER READY");
-  }
-});
+// transporter.verify(function (error, success) {
+//   if (error) {
+//     console.log("SMTP ERROR:", error);
+//   } else {
+    // console.log("SMTP SERVER READY");
+//   }
+// });
 
 
 function generateOTP() {
@@ -38,28 +38,42 @@ router.post("/register", async (req, res) => {
       return res.status(400).json({ message: "Email already exists" });
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const otp = generateOTP();
-    const otpExpiry = Date.now() + 10 * 60 * 1000; 
+//     const otp = generateOTP();
+//     const otpExpiry = Date.now() + 10 * 60 * 1000; 
 
-    const newUser = new User({
-      name,
-      email,
-      password: hashedPassword,
-      otp,
-      otpExpiry,
-    });
+//     const newUser = new User({
+//       name,
+//       email,
+//       password: hashedPassword,
+//       otp,
+//       otpExpiry,
+//     });
 
-    await newUser.save();
+//     await newUser.save();
 
     
-    await transporter.sendMail({
-      from: "aleena2001baby@gmail.com",
-      to: email,
-      subject: "OTP Verification for RentHunt",
-      html: `<h2>Your OTP is: ${otp}</h2><p>Valid for 10 minutes</p>`,
-    });
-console.log("OTP sent successfully to:", email);
-    res.status(201).json({ message: "OTP sent to email", email });
+//     await transporter.sendMail({
+//       from: "aleena2001baby@gmail.com",
+//       to: email,
+//       subject: "OTP Verification for RentHunt",
+//       html: `<h2>Your OTP is: ${otp}</h2><p>Valid for 10 minutes</p>`,
+//     });
+// console.log("OTP sent successfully to:", email);
+
+const newUser = new User({
+  name,
+  email,
+  password: hashedPassword,
+  isVerified: true,
+});
+
+await newUser.save();    
+
+res.status(201).json({
+  message: "Registration successful",
+});
+
+    // res.status(201).json({ message: "OTP sent to email", email });
   } catch (err) {
      console.error("REGISTER ERROR:");
     console.error(err);
