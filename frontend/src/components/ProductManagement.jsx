@@ -26,7 +26,7 @@ const ProductManagement = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/products");
+            const response = await axios.get("https://renthunt-backend.onrender.com/api/products");
             console.log("Fetched Products:", response.data);  
             setProducts(response.data);
         } catch (error) {
@@ -87,7 +87,7 @@ const ProductManagement = () => {
         });
 
         try {
-            await axios.post("http://localhost:5000/api/products/add", formDataToSend);
+            await axios.post("https://renthunt-backend.onrender.com/api/products/add", formDataToSend);
             fetchProducts();
             resetForm();
             setShowForm(false); 
@@ -148,7 +148,7 @@ const ProductManagement = () => {
                 product.images.forEach((image) => formDataToSend.append("image", image));
             }
 
-            await axios.put(`http://localhost:5000/api/products/${product._id}`, formDataToSend, {
+            await axios.put(`https://renthunt-backend.onrender.com/api/products/${product._id}`, formDataToSend, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
@@ -162,7 +162,7 @@ const ProductManagement = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://renthunt-backend.onrender.com/api/products/${id}`);
             fetchProducts();
         } catch (error) {
             console.error("Error deleting product:", error);
@@ -189,7 +189,7 @@ const ProductManagement = () => {
             product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
             product.subcategory.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    const backendURL = "http://localhost:5000";
+    const backendURL = "https://renthunt-backend.onrender.com";
 
     return (
         <div className="product-management-container">

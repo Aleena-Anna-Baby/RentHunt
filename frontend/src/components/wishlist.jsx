@@ -112,7 +112,7 @@ const Wishlist = () => {
                                         {item.images.map((image, index) => (
                                             <img
                                                 key={index}
-                                                src={`http://localhost:5000${image}`}
+                                                src={`https://renthunt-backend.onrender.com${image}`}
                                                 alt={item.name}
                                                 className={`product-images ${index !== 0 ? 'product-images-hover' : ''}`}
                                                 onClick={() => handleCardClick(item._id)}

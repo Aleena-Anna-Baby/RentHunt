@@ -37,7 +37,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products") 
+    axios.get("https://renthunt-backend.onrender.com/api/products") 
       .then((res) => {
         setAllData(res.data);
       })
@@ -55,7 +55,7 @@ export default function Navbar() {
       const userId = localStorage.getItem("userId");
 
       if (token && userId) {
-        axios.get(`http://localhost:5000/api/cart/${userId}`)
+        axios.get(`https://renthunt-backend.onrender.com/api/cart/${userId}`)
 
           .then((res) => {
             setCartCount(res.data.cart.length); 
@@ -93,7 +93,7 @@ export default function Navbar() {
   const fetchCartCount = () => {
     const userId = localStorage.getItem("userId");
     if (userId) {
-      axios.get(`http://localhost:5000/api/cart/${userId}`)
+      axios.get(`https://renthunt-backend.onrender.com/api/cart/${userId}`)
         .then((res) => {
           setCartCount(res.data.cart.length);
         })
@@ -146,7 +146,7 @@ const submitAdminLogin = async () => {
   }
 
   try {
-    const response = await axios.post("http://localhost:5000/api/admin/login", {
+    const response = await axios.post("https://renthunt-backend.onrender.com/api/admin/login", {
       email: adminEmail,
       password: adminPassword,
     });
@@ -167,7 +167,7 @@ const submitAdminLogin = async () => {
 
   return (
     <div className="Navbar">
-      <img src="/images/home/logo.png" alt="logo" className="logo" />
+      <img src="/images/home/Logo.png" alt="logo" className="logo" />
       <div className="desktop-only">
         <button className="navbuto" onClick={handleHomeClick}>Home</button>
         <button className="navbuto" onClick={handleStash}><LiaShoppingBagSolid className="stash"/>My Stash

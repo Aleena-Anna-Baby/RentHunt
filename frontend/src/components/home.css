@@ -54,19 +54,7 @@
     font-family: Raleway;
 }
 
-/* @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
 
-    50% {
-        transform: translateY(-50px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-} */
 
 /* Typing effect */
 .typing-container {
@@ -155,7 +143,7 @@
 }
 
 .categories {
-    width: 98%;
+    width: 103%;
     margin-left: 1%;
     display: flex;
     flex-wrap: wrap;

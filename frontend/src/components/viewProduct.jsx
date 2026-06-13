@@ -119,7 +119,7 @@ const ViewProduct = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`);
+                const response = await fetch(`https://renthunt-backend.onrender.com/api/products/${id}`);
                 const data = await response.json();
                 setProduct(data);
             } catch (error) {
@@ -150,7 +150,7 @@ const ViewProduct = () => {
             <div className="left-section">
                 <div className="main-image-container">
                     <img
-                        src={`http://localhost:5000${product.images[mainImageIndex]}`}
+                        src={`https://renthunt-backend.onrender.com${product.images[mainImageIndex]}`}
                         alt="product"
                         className="main-image"
                         onClick={openModal}
@@ -178,7 +178,7 @@ const ViewProduct = () => {
                     {product.images.map((img, idx) => (
                         <img
                             key={idx}
-                            src={`http://localhost:5000${img}`}
+                            src={`https://renthunt-backend.onrender.com${img}`}
                             alt="thumb"
                             className={`thumbnail ${mainImageIndex === idx ? 'active' : ''}`}
                             onClick={() => handleImageClick(idx)}
@@ -237,7 +237,7 @@ const ViewProduct = () => {
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
                         <button className="modal-close" onClick={closeModal}>✖</button>
                         <img
-                            src={`http://localhost:5000${product.images[mainImageIndex]}`}
+                            src={`https://renthunt-backend.onrender.com${product.images[mainImageIndex]}`}
                             alt="Enlarged"
                             className="modal-image"
                         />

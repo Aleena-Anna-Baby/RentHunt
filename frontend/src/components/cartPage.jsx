@@ -132,7 +132,7 @@ const CartPage = () => {
 
                             <div className="cart-images">
                                 <img
-                                    src={`http://localhost:5000${item.product.images[0]}`}
+                                    src={`https://renthunt-backend.onrender.com${item.product.images[0]}`}
                                     alt={item.product.name}
                                     className="products-images"
                                 />

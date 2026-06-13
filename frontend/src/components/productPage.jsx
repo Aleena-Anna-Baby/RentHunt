@@ -180,7 +180,7 @@ const ProductPage = () => {
   useEffect(() => {
     // Fetch products based on category or subcategory
     const fetchProducts = async () => {
-      let url = 'http://localhost:5000/api/products';
+      let url = 'https://renthunt-backend.onrender.com/api/products';
       if (category) {
         url += `/category/${category}`;
       } else if (subcategory) {
@@ -226,7 +226,7 @@ const ProductPage = () => {
                   {product.images.map((image, index) => (
                     <img
                       key={index}
-                      src={`http://localhost:5000${image}`}
+                      src={`https://renthunt-backend.onrender.com${image}`}
                       alt={product.name}
                       className={`product-images ${index !== 0 ? 'product-images-hover' : ''}`}
                     />
